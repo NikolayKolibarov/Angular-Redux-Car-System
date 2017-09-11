@@ -1,0 +1,53 @@
+<md-sidenav-container>
+  <md-sidenav mode="push" #sidenav>
+    <md-toolbar (click)="sidenav.close()">
+      <span>Car System</span>
+
+      <md-toolbar-row *ngIf="!authenticated">
+        <span>
+          <a routerLink="/login">Login</a>
+        </span>
+        <span class="spacer"></span>
+        <md-icon class="icon">perm_identity</md-icon>
+      </md-toolbar-row>
+
+      <md-toolbar-row *ngIf="authenticated">
+        <span>
+          <a routerLink="/user/profile">{{user.name}}</a>
+        </span>
+        <span class="spacer"></span>
+        <md-icon class="icon">perm_identity</md-icon>
+      </md-toolbar-row>
+
+      <md-toolbar-row *ngIf="authenticated">
+        <span>
+          <a href="javascript:;" (click)="logout()">Logout</a>
+        </span>
+        <span class="spacer"></span>
+        <md-icon class="icon">keyboard_return</md-icon>
+      </md-toolbar-row>
+
+
+      <md-toolbar-row>
+        <span>
+        <a routerLink="/cars">Cars</a>
+        </span>
+        <span class="spacer"></span>
+        <md-icon class="icon">directions_car</md-icon>
+      </md-toolbar-row>
+
+      <md-toolbar-row *ngIf="authenticated">
+        <span>
+          <a routerLink="/cars/create">Add Car</a>
+        </span>
+        <span class="spacer"></span>
+        <md-icon class="icon">create</md-icon>
+      </md-toolbar-row>
+
+    </md-toolbar>
+  </md-sidenav>
+  <header [sidenav]="sidenav"></header>
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>

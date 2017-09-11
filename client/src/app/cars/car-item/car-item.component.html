@@ -1,0 +1,15 @@
+<md-card>
+  <md-card-header>
+    <md-card-title>{{ car.make }} {{ car.model }}</md-card-title>
+    <md-card-subtitle>{{ car.engine }}</md-card-subtitle>
+  </md-card-header>
+  <img md-card-image src="{{ car.image }}">
+  <md-card-content>
+    <h2>${{ car.price }}</h2>
+    <p>
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button (click)="viewCarDetails(car.id)">{{"Details" | uppercase }}</button>
+  </md-card-actions>
+</md-card>

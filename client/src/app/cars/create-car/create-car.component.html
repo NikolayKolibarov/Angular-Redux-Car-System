@@ -1,0 +1,29 @@
+<h1>Create Car</h1>
+<div>
+    <md-card>
+        <form>
+            <md-input-container>
+                <input type="text" [(ngModel)]="make" mdInput name="make" placeholder="Make" />
+            </md-input-container>
+            <md-input-container>
+                <input type="text" [(ngModel)]="model" mdInput name="model" placeholder="Model" />
+            </md-input-container>
+            <md-input-container>
+                <input type="text" [(ngModel)]="year" mdInput name="year" placeholder="Year" />
+            </md-input-container>
+            <md-input-container>
+                <input type="text" [(ngModel)]="engine" mdInput name="engine" placeholder="Engine" />
+            </md-input-container>
+            <md-input-container>
+                <input type="text" [(ngModel)]="price" mdInput name="price" placeholder="Price" />
+            </md-input-container>
+            <md-input-container>
+                <input type="text" [(ngModel)]="image" mdInput name="image" placeholder="Image URL" />
+            </md-input-container>
+             <md-input-container>
+                <input type="text" [(ngModel)]="mileage" mdInput name="mileage" placeholder="Mileage" />
+            </md-input-container>
+        </form>
+    </md-card>
+    <button md-raised-button (click)="create(make, model, year, engine, price, image, mileage)">Create Car</button>
+</div>

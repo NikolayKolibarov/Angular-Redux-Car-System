@@ -1,0 +1,57 @@
+<div *ngIf="car">
+    <h1>{{car.make}} {{ car.model }} {{ car.engine }}</h1>
+    <md-card>
+        <md-card-header>
+            <md-card-title>{{ car.make }} {{ car.model }}</md-card-title>
+            <md-card-subtitle>{{ car.engine }}</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="{{ car.image }}">
+        <md-card-content>
+            <h3>${{ car.price }}</h3>
+                <md-list>
+                    <md-list-item> Manufacturer - {{ car.make }} </md-list-item>
+                    <md-list-item> Model - {{ car.model }} </md-list-item>
+                    <md-list-item> Engine - {{ car.engine }} </md-list-item>
+                    <md-list-item> Year: {{ car.year }} </md-list-item>
+                    <md-list-item *ngIf="car.mileage"> Mileage: {{ car.mileage }} </md-list-item>
+                </md-list>
+        </md-card-content>
+        <md-card-actions>
+            <button md-button (click)="addLike(car.id)"><md-icon class="icon">thumb_up</md-icon> {{car.likes}}</button>
+
+        </md-card-actions>
+        <md-card-footer>
+            <p>{{ car.createdOn | date }}</p>
+        </md-card-footer>
+    </md-card>
+    <div class="cs-clearfix"></div>
+    <h2>Add Review</h2>
+    <md-card>
+        <form>
+            <md-radio-group [(ngModel)]="rating" name="rating">
+                <p>Rating</p>
+                <md-radio-button [value]="1" selected>1</md-radio-button>
+                <md-radio-button [value]="2">2</md-radio-button>
+                <md-radio-button [value]="3">3</md-radio-button>
+                <md-radio-button [value]="4">4</md-radio-button>
+                <md-radio-button [value]="5">5</md-radio-button>
+            </md-radio-group>
+            <div class="cs-clearfix"></div>
+            <md-input-container>
+
+                <textarea [(ngModel)]="comment" mdInput name="comment" placeholder="Comment"></textarea>
+
+            </md-input-container>
+        </form>
+        <button md-raised-button (click)="addReview(car.id, rating, comment)">Submit Review</button>
+
+    </md-card>
+    <div class="cs-clearfix"></div>
+    <h2>Reviews</h2>
+    <cs-review-list [reviews]="carReviews" *ngIf="carReviews.length > 0"></cs-review-list>
+    <p *ngIf="carReviews.length === 0" class="no-reviews">There are no reviews for this car yet.</p>
+
+    <button md-raised-button (click)="back()">Back</button>
+
+    <div class="cs-clearfix"></div>
+</div>

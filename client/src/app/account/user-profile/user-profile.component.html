@@ -1,0 +1,24 @@
+<h1>User Profile</h1>
+<h2>Cars</h2>
+<h3 *ngIf="cars.length < 1">No cars to be shown.</h3>
+<div *ngFor="let car of cars">
+
+    <md-card>
+        <md-card-header>
+            <md-card-title>{{ car.make }} {{ car.model }}</md-card-title>
+            <md-card-subtitle>{{ car.engine }}</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="{{ car.image }}">
+        <md-card-content>
+            <h4>${{ car.price }}</h4>
+            <p>
+            </p>
+        </md-card-content>
+        <md-card-actions>
+            <a routerLink="/cars/details/{{car.id}}" md-button>{{"Details" | uppercase }}</a>
+            <button md-button (click)="remove(car.id)">{{"Remove" | uppercase}}</button>
+        </md-card-actions>
+    </md-card>
+    <br>
+</div>
+<div class="cs-clearfix"></div>

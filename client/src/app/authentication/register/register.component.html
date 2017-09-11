@@ -1,0 +1,22 @@
+<h1>Register</h1>
+<div>
+
+    <md-card>
+        <form>
+            <md-input-container>
+                <input type="text" [(ngModel)]="name" mdInput name="name" placeholder="Name">
+            </md-input-container>
+            <md-input-container>
+                <input type="email" [(ngModel)]="email" mdInput name="email" placeholder="Email">
+            </md-input-container>
+            <md-input-container>
+                <input type="password" [(ngModel)]="password" mdInput name="password" placeholder="Password">
+            </md-input-container>
+            <md-input-container>
+                <input type="password" [(ngModel)]="confirmPassword" mdInput name="confirmPassword" placeholder="Confirm Password">
+            </md-input-container>
+        </form>
+        <a routerLink="/login">Already have an account? Login.</a>
+    </md-card>
+    <button md-raised-button (click)="register(name, email, password, confirmPassword)">Register</button>
+</div>

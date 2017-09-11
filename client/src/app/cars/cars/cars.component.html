@@ -1,0 +1,22 @@
+<h1>Cars</h1>
+<div>
+    <md-card>
+        <form>
+            <md-input-container>
+                <input type="text" [(ngModel)]="search" mdInput name="search" placeholder="Search for a car..." (keyup)="searchCars(search)"
+                />
+            </md-input-container>
+        </form>
+    </md-card>
+</div>
+
+<h3 *ngIf="searchResults.length == 0 && search.length || cars.length == 0">No cars found.</h3>
+
+<cs-car-list [cars]="cars" *ngIf="search.length < 1"></cs-car-list>
+<cs-car-list [cars]="searchResults" *ngIf="searchResults.length != 0 && search.length > 0"></cs-car-list>
+
+<div class="paginator">
+    <button md-raised-button (click)="previousPage()" [disabled]="!hasPreviousPage()">{{"<" | uppercase }}</button>
+    <button md-raised-button (click)="nextPage()" [disabled]="!hasNextPage()">{{">" | uppercase }}</button>
+</div>
+<div class="cs-clearfix"></div>

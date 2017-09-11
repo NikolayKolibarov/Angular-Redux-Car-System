@@ -1,0 +1,40 @@
+.fill-space {
+  flex: 1 1 auto;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+nav > a:hover {
+  cursor: pointer;
+  font-size: 22px;
+}
+
+nav > a {
+  margin: 15px;
+}
+
+.nav-brand {
+  font-size: 26px;
+  margin: 15px;
+}
+
+.nav-brand:hover {
+  font-size: 28px;
+}
+
+@media (min-width: 600px) {
+
+  /* .nav-button {
+    display: none;
+  } */
+}
+
+@media (max-width: 600px) {
+   .nav-left, .nav-right {
+    display: none;
+  }
+
+}

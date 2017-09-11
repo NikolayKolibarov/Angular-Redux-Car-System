@@ -1,0 +1,11 @@
+md-card {
+    margin: 15px;
+}
+
+span {
+    margin-left: 25px;
+}
+
+md-card-footer {
+    height: 45px;
+}

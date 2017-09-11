@@ -1,0 +1,12 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h2, h3 {
+    color: whitesmoke;
+}
+
+.cs-clearfix {
+    margin: 15px;
+}
